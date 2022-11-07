@@ -6,9 +6,16 @@ pipeline {
     GCLOUD_CREDS=credentials('gcloud-creds')
   }
   stages {
-    stage('Git Checkout') {
+    stage('Verify version') {
       steps {
-           git credentialsId: 'dd00355e-d318-4a82-b9b2-941053ad38e2', url: 'https://github.com/gnaneethi81/cloudrun.git'
+        sh '''
+          gcloud version
+        '''
+      }
+    }
+    stage('git checkout ') {
+      steps {
+            git branch: 'main', credentialsId: 'Github', url: 'https://github.com/gnaneethi81/cloudrun.git'
       }
     }
     stage('Authenticate') {
