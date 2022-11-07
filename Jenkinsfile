@@ -8,9 +8,7 @@ pipeline {
   stages {
     stage('Git Checkout') {
       steps {
-        sh '''
-          git 'https://github.com/gnaneethi81/cloudrun.git'
-        '''
+           git 'https://github.com/gnaneethi81/cloudrun.git'
       }
     }
     stage('Authenticate') {
