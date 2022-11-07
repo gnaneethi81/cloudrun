@@ -13,11 +13,6 @@ pipeline {
         '''
       }
     }
-    stage('git checkout ') {
-      steps {
-            git branch: 'main', credentialsId: 'Github', url: 'https://github.com/gnaneethi81/cloudrun.git'
-      }
-    }
     stage('Authenticate') {
       steps {
         sh '''
