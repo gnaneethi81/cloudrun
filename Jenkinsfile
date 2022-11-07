@@ -6,10 +6,10 @@ pipeline {
     GCLOUD_CREDS=credentials('gcloud-creds')
   }
   stages {
-    stage('Verify version') {
+    stage('Git Checkout') {
       steps {
         sh '''
-          gcloud version
+          git 'https://github.com/gnaneethi81/cloudrun.git'
         '''
       }
     }
