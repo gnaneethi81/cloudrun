@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Git Checkout') {
       steps {
-           git 'https://github.com/gnaneethi81/cloudrun.git'
+           git credentialsId: 'dd00355e-d318-4a82-b9b2-941053ad38e2', url: 'https://github.com/gnaneethi81/cloudrun.git'
       }
     }
     stage('Authenticate') {
